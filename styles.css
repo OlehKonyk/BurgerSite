@@ -1,5 +1,5 @@
 :root {
-    --h1-font-size: 2rem;
+    --h1-font-size: 1.9rem;
     --h2-font-size: 1.6rem;
     --h3-font-size: 1.3rem;
     --p-font-size: 1rem;
@@ -183,6 +183,15 @@ a {
     rotate: -15deg;
 }
 
+.main-icon {
+    opacity: 0;
+    transition: opacity 900ms ease-out 1700ms;
+}
+
+.main-icon.active {
+    opacity: 1;
+}
+
 .main-burger-container {
     position: relative;
     display: flex;
@@ -194,7 +203,7 @@ a {
 .main-burger {
     position: absolute;
     width: 300px;
-    z-index: 20;    
+    z-index: 20;
     opacity: 0;
     left: 25px;
     top: -60px;
@@ -225,7 +234,7 @@ a {
 
 .recipe-section {
     height: 100vh;
-    width: 95vw;
+    width: 100vw;
     text-align: center;
 }
 
@@ -238,6 +247,8 @@ a {
 .recipe-container {
     display: grid;
     grid-template-columns: 2fr 3fr;
+    overflow: hidden;
+    margin: 0 1rem;
 }
 
 .recipe {
@@ -305,4 +316,96 @@ transform: translateX(-50px);
 .recipe-img {
     width: 100%;
     height: 100%;
+}
+
+.animated-burger {
+    position: relative;
+    overflow: hidden;    
+    opacity: 0;
+    transition: transform 1600ms ease-in-out 2500ms, opacity 2200ms ease-out 2400ms;
+    transform: translateX(-100px);
+}
+
+.animated-burger.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animated-burger img {
+    position: absolute;
+}
+
+.button-bun {
+    z-index: 10;
+    right: 8px;
+    top: 400px;
+    width: 250px;
+}
+
+.tomato {
+    z-index: 12;
+    right: 38px;
+    top: 345px;
+    width: 170px;
+}
+
+.onion2 {
+    z-index: 14;
+    right: 130px;
+    top: 280px;
+    width: 100px;
+}
+
+.onion1 {
+    z-index: 14;
+    right: 25px;
+    top: 295px;
+    width: 100px;
+}
+
+.cutlet {
+    z-index: 15;
+    right: 35px;
+    top: 220px;
+    width: 180px;
+}
+
+.cheez {
+    z-index: 16;
+    right: 10px;
+    top: 194px;
+    width: 270px;
+    rotate: -5deg;
+}
+
+.pikuli3 {
+    z-index: 17;
+    right: 35px;
+    top: 125px;
+    width: 70px;
+    rotate: -15deg;
+}
+
+.pikuli2 {
+    z-index: 18;
+    right: 140px;
+    top: 135px;
+    width: 75px;
+    rotate: 15deg; 
+}
+
+
+.pikuli1 {
+    z-index: 19;
+    right: 80px;
+    top: 170px;
+    width: 63px;
+    rotate: 8 deg; 
+}
+
+.top-bun, .top-bun2 {
+    z-index: 10;
+    right: 30px;
+    top: 45px;
+    width: 200px;
 }
