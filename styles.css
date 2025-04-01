@@ -1,6 +1,10 @@
 :root {
     --h1-font-size: 2rem;
-    --p-font-size: 1.2rem;
+    --h2-font-size: 1.6rem;
+    --h3-font-size: 1.3rem;
+    --p-font-size: 1rem;
+    --color-bg: rgb(255, 251, 182);
+    --color-cart: rgb(242, 248, 93);
 }
 
 * {
@@ -11,11 +15,11 @@
 
 body {
     font-family: "Satisfy";
-    padding-top: 5rem;
+    padding-top: 60px;
     margin: 0;
     width: 100%;
     overflow-x: hidden;
-
+    background-color: var(--color-bg);
 }
 
 a {
@@ -31,8 +35,8 @@ a {
 .header {
     position: fixed;
     top: 0;
-    background: transparent;
-    height: 5rem;
+    background-color: var(--color-bg);
+    height: 60px;
     width: 100vw;
     z-index: 100;
 }
@@ -76,6 +80,8 @@ a {
     align-items: center;
     position: absolute;
     padding: 2rem;
+    font-size: var(--h2-font-size);
+    font-weight: 400;
     background: wheat;
     width: 100%;
     height: 30vh;
@@ -109,7 +115,8 @@ a {
 
 .home-page-section {
     width: 100%;
-    height: 90vh;
+    height: 95vh;
+    background-color: var(--color-bg);
 }
 
 .home-page-content {
@@ -129,7 +136,7 @@ a {
     width: 90%;
     padding-top: 2rem;
     opacity: 0;
-    transition: transform 1400ms ease-in-out , opacity 1200ms ease-out 200ms;
+    transition: transform 1400ms ease-in-out , opacity 1400ms ease-out 200ms;
     transform: translateX(50px);
 }
 .home-description.active {
@@ -145,13 +152,34 @@ a {
 .home-description p {
     font-size: var(--p-font-size);
     font-weight: 400;
-    padding: 1.5rem;
+    padding: 1.2rem;
 }
 
-.gost-burger {
+.by-mow-botton {
+    background-color: var(--color-cart);
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-size: var(--h3-font-size);
+}
+
+.main-burger-icon {
     position: absolute;
-    bottom: 1rem;
+    bottom: 2rem;
     right: 0;
+    rotate: -20deg;
+}
+
+.main-drink-icon {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 2rem;
+    rotate: 25deg;
+}
+
+.main-fries-icon {
+    position: absolute;
+    top: 4rem;
+    left: 5rem;
     rotate: -15deg;
 }
 
@@ -159,34 +187,122 @@ a {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 450px;
+    min-height: 450px;
     width: 350px;
 }
 
 .main-burger {
     position: absolute;
+    width: 300px;
     z-index: 20;    
     opacity: 0;
-    left: 15px;
-    top: -15px;
-    transition: transform 1400ms ease-in-out , opacity 1200ms ease-out 200ms;
+    left: 25px;
+    top: -60px;
+    transition: transform 1600ms ease-in-out 1000ms, opacity 900ms ease-out 1400ms;
     transform: translateY(0);
 }
 .main-burger.active {
     opacity: 1;
-    transform: translateY(60px);
+    transform: translateY(70px);
 }
 
 .main-board {
+    width: 300px;
     position: absolute;
     z-index: 10;
     opacity: 0;
-    left: 15px;
-    bottom: 20px;
-    transition: transform 1400ms ease-in-out , opacity 1200ms ease-out 200ms;
+    left: 25px;
+    bottom: 70px;
+    transition: transform 1600ms ease-in-out 400ms, opacity 1000ms ease-out 800ms;
     transform: translateY(0);
 }
 .main-board.active {
     opacity: 1;
-    transform: translateY(-50px);
+    transform: translateY(-60px);
+}
+
+/* Recipe */
+
+.recipe-section {
+    height: 100vh;
+    width: 95vw;
+    text-align: center;
+}
+
+.recipe-section h2 {
+    font-size: var(--h2-font-size);
+    font-weight: 600;
+    padding: 2rem 0;
+}
+
+.recipe-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.recipe {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: .5rem;
+}
+
+.l-component, .r-component {
+    display: flex;
+    gap: .5rem;
+    text-align: start;
+    opacity: 0;
+    transition: transform 1600ms ease-out, opacity 1800ms ease-in-out;
+    transform: translateX(50px);
+}
+
+.r-component {
+flex-direction: row-reverse;
+text-align: end;
+transform: translateX(-50px);
+}
+
+.delay-1 {
+    transition-delay: 200ms;
+}
+.delay-2 {
+    transition-delay: 600ms;
+}
+.delay-3 {
+    transition-delay: 1000ms;
+}
+.delay-4 {
+    transition-delay: 1400ms;
+}
+.delay-5 {
+    transition-delay: 1800ms;
+}
+
+.l-component.active, .r-component.active {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.compenent-title {
+    font-size: var(--h3-font-size);
+    font-weight: 600;
+}
+
+.compenent-descr {
+    font-size: var(--p-font-size);
+}
+
+.recipe-icon {
+    display: flex;
+    width: 90px;
+    height: 90px;
+    border: 2px solid white;
+    background-color: var(--color-cart);
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.recipe-img {
+    width: 100%;
+    height: 100%;
 }

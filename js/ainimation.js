@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const animatedSections = [".animeted-burger", ".courier-road", ".home-page-content", ".main-burger-container"];
+    const animatedSections = [".animeted-burger",".recipe", ".courier-road", ".home-page-content", ".main-burger-container"];
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
