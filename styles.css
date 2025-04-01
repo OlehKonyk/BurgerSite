@@ -185,11 +185,13 @@ a {
 
 .main-icon {
     opacity: 0;
-    transition: opacity 900ms ease-out 1700ms;
+    transition: transform 1200ms ease-in-out 1600ms, opacity 900ms ease-out 1700ms;
+    transform: translateY(30px)
 }
 
 .main-icon.active {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .main-burger-container {
@@ -241,7 +243,7 @@ a {
 .recipe-section h2 {
     font-size: var(--h2-font-size);
     font-weight: 600;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .recipe-container {
