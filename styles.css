@@ -3,8 +3,8 @@
     --h2-font-size: 1.8rem;
     --h3-font-size: 1.4rem;
     --p-font-size: 1rem;
-    --color-bg: rgb(246, 235, 165);
-    --color-cart: rgb(255, 217, 94);
+    --color-bg: rgb(249, 241, 130);
+    --color-cart: rgb(255, 216, 107);
     --color-border: rgb(238, 239, 216);
 }
 
@@ -423,6 +423,7 @@ transform: translateX(-50px);
 /* Food menu section */
 .food-menu {
     text-align: center;
+    min-height: 100vh;
 }
 
 .mobile, .desktop {
