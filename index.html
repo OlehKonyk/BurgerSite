@@ -39,7 +39,7 @@
                     paving the way for cooking and preparing hot, 
                     delicious burgers.
                 </p>
-                <a href="" class="by-mow-botton">By now</a>
+                <a href="" class="buy-now-botton">By now</a>
                 <img class="main-burger-icon main-icon" src="img/icons/burger.png" style="width: 2rem" alt="">
                 <img class="main-drink-icon main-icon" src="img/icons/drink.png" style="width: 2rem" alt="">
                 <img class="main-fries-icon main-icon" src="img/icons/fries.png" style="width: 2rem" alt="">
@@ -115,10 +115,27 @@
             </div>
         </div>
     </section>
-    <section></section>
+    <section class="food-menu">
+        <h2>Our Menu</h2>
+        <div id="mobile-menu" class="mobile">
+            <div class="menu-header">
+                <button id="prev-btn" class="menu-btn">&lt;</button>
+                <h3 id="menu-title">Burgers</h3>
+                <button id="next-btn" class="menu-btn">&gt;</button>
+            </div>
+        </div>
+        <div id="desktop-menu" class="desktop">
+            <button data-category="burgers">Burgers</button>
+            <button data-category="drinks">Drinks</button>
+            <button data-category="other">Other</button>
+            <button data-category="icecream">Icecream</button>
+        </div>
+        <div id="menu-content"></div>
+    </section>
     <section></section>
     <footer></footer>
     <script src="js/nav.js"></script>
     <script src="js/ainimation.js"></script>
+    <script src="js/food-menu.js"></script>
 </body>
 </html>

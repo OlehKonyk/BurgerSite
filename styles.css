@@ -1,10 +1,11 @@
 :root {
-    --h1-font-size: 1.9rem;
-    --h2-font-size: 1.6rem;
-    --h3-font-size: 1.3rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.8rem;
+    --h3-font-size: 1.4rem;
     --p-font-size: 1rem;
-    --color-bg: rgb(255, 251, 182);
-    --color-cart: rgb(242, 248, 93);
+    --color-bg: rgb(246, 235, 165);
+    --color-cart: rgb(255, 217, 94);
+    --color-border: rgb(238, 239, 216);
 }
 
 * {
@@ -28,6 +29,22 @@ a {
     font-weight: normal;
     background: none;
     border: none;
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+p {
+    font-size: var(--p-font-size);
 }
 
 /* Header */
@@ -145,17 +162,15 @@ a {
 }
 
 .home-description h1 {
-    font-size: var(--h1-font-size);
     font-weight: 900;
 }
 
 .home-description p {
-    font-size: var(--p-font-size);
     font-weight: 400;
     padding: 1.2rem;
 }
 
-.by-mow-botton {
+.buy-now-botton {
     background-color: var(--color-cart);
     border-radius: 25px;
     padding: 8px 16px;
@@ -241,7 +256,6 @@ a {
 }
 
 .recipe-section h2 {
-    font-size: var(--h2-font-size);
     font-weight: 600;
     padding: 1rem 0;
 }
@@ -250,7 +264,7 @@ a {
     display: grid;
     grid-template-columns: 2fr 3fr;
     overflow: hidden;
-    margin: 0 1rem;
+    margin-right: 1rem;
 }
 
 .recipe {
@@ -296,21 +310,16 @@ transform: translateX(-50px);
 }
 
 .compenent-title {
-    font-size: var(--h3-font-size);
     font-weight: 600;
-}
-
-.compenent-descr {
-    font-size: var(--p-font-size);
 }
 
 .recipe-icon {
     display: flex;
     width: 90px;
     height: 90px;
-    border: 2px solid white;
+    border: .2rem solid var(--color-border);
     background-color: var(--color-cart);
-    border-radius: 12px;
+    border-radius: 1rem;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
@@ -396,7 +405,6 @@ transform: translateX(-50px);
     rotate: 15deg; 
 }
 
-
 .pikuli1 {
     z-index: 19;
     right: 80px;
@@ -410,4 +418,74 @@ transform: translateX(-50px);
     right: 30px;
     top: 45px;
     width: 200px;
+}
+
+/* Food menu section */
+.food-menu {
+    text-align: center;
+}
+
+.mobile, .desktop {
+    display: none;
+}
+.menu-header {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.menu-btn {
+    border: none;
+    padding: 0 .5rem;
+    font-size: var(--h1-font-size);
+    background-color: transparent;
+}
+
+#menu-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    justify-content: center;
+    gap: 3rem 1.5rem;
+    padding: 3rem 2rem;
+}
+
+.menu-card {
+    position: relative;
+    border: .3rem solid var(--color-border);
+    padding: 5.5rem 1rem 1rem;
+    background-color: var(--color-cart);
+    text-align: start;
+    border-radius: 1rem;
+}
+
+.menu-card:hover img {
+    transform: scale(1.1) translateY(-4px);
+}
+
+.menu-card img {
+    position: absolute;
+    width: 160px;
+    color: transparent;
+    background-color: transparent;
+    transition: all 0.6s ease;
+    top: -3rem;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+.menu-card h3 {
+    margin: .5rem 0;
+}
+
+@media (max-width: 768px) {
+    .mobile {
+        display: flex;
+        justify-content: center;
+    }
+    }
+    @media (min-width: 769px) {
+    .desktop {
+        display: block;
+    }
 }
