@@ -199,6 +199,7 @@ p {
 }
 
 .main-icon {
+    width: 2rem;
     opacity: 0;
     transition: transform 1200ms ease-in-out 1600ms, opacity 900ms ease-out 1700ms;
     transform: translateY(30px)
@@ -309,7 +310,7 @@ transform: translateX(-50px);
     transform: translateX(0px);
 }
 
-.compenent-title {
+.component-title {
     font-weight: 600;
 }
 
@@ -410,7 +411,7 @@ transform: translateX(-50px);
     right: 80px;
     top: 170px;
     width: 63px;
-    rotate: 8 deg; 
+    rotate: 8deg; 
 }
 
 .top-bun, .top-bun2 {
@@ -477,6 +478,120 @@ transform: translateX(-50px);
 
 .menu-card h3 {
     margin: .5rem 0;
+}
+
+/* Delivery section */
+
+.delivery-section {
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.delivery-container {
+    position: relative;
+    height: 70vh;
+    min-height: 540px;
+    background-color: var(--color-cart);
+    margin: 2.5rem 1.5rem 5rem;
+    border-radius: 3rem;
+    border: .4rem solid var(--color-border);
+    text-align: center;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.delivery-icon {
+    width: 2rem;
+    opacity: 0;
+    transition: transform 1200ms ease-in-out 600ms, opacity 900ms ease-out 700ms;
+    transform: translateY(-20px)
+}
+
+.delivery-icon.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delivery-burger-icon {
+    position: absolute;
+    top: 15rem;
+    left: 3.5rem;
+    rotate: 25deg;
+}
+
+.delivery-drink-icon {
+    position: absolute;
+    top: 5.5rem;
+    right: 3rem;
+    rotate: -15deg;
+}
+
+.delivery-fries-icon {
+    position: absolute;
+    top: 3.5rem;
+    left: 2rem;
+    rotate: -15deg;
+}
+
+.delivery-title {
+    padding: 1rem;
+}
+
+.contacts-title {
+    padding-bottom: 1rem ;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-icons img {
+    width: 50px;
+}
+
+.gif-courier {
+    width: 100%;
+}
+
+.gif-courier-container {
+    width: 12%;
+    min-width: 60px;
+    position: absolute;
+    bottom: 7%;
+    left: -100px;
+    animation: drive 15000ms linear infinite;
+}
+
+@keyframes drive {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(120vw);
+    }
+}
+
+
+/* footer */
+
+.footer {
+    height: 40px;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: -2px 2px 8px black;
+}
+
+.footer p {
+    font-size: .8rem;
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const animatedSections = [".recipe-container", ".animated-burger",".recipe", ".courier-road", ".home-page-content", ".main-burger-container"];
+    const halfVisibleSections = [
+        ".recipe-container",
+        ".animated-burger",
+        ".recipe",
+        ".courier-road",
+        ".home-page-content",
+        ".main-burger-container",
+        ".delivery-container"];
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -13,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.5 });
 
-    animatedSections.forEach(selector => {
+    halfVisibleSections.forEach(selector => {
         document.querySelectorAll(selector).forEach(section => observer.observe(section));
     });
 });
