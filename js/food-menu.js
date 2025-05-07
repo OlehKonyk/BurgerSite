@@ -46,7 +46,7 @@ function renderMenu(category) {
         card.className = "menu-card";
         card.innerHTML = `<img src="${item.image}" alt="${item.name}">
         <h3>${item.name}</h3>
-        <h3>${item.price}</h3>`;
+        <p>${item.price}</p>`;
         container.appendChild(card);
     });
 

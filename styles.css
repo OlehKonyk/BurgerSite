@@ -102,7 +102,8 @@ p {
     background: wheat;
     width: 100%;
     height: 30vh;
-    top: -40vh;
+    min-height: 210px;
+    top: -300px;
     left: 0;
     box-shadow: -2px 2px 8px black;
     transition: top 0.5s ease-in-out;
@@ -133,6 +134,7 @@ p {
 .home-page-section {
     width: 100%;
     height: 95vh;
+    min-height: 580px;
     background-color: var(--color-bg);
 }
 
@@ -175,6 +177,11 @@ p {
     border-radius: 25px;
     padding: 8px 16px;
     font-size: var(--h3-font-size);
+    transition: all 0.6s ease;
+}
+
+.buy-now-botton:hover {
+    scale: 1.05;
 }
 
 .main-burger-icon {
@@ -218,6 +225,10 @@ p {
     width: 350px;
 }
 
+.home-veg {
+    display: none;
+}
+
 .main-burger {
     position: absolute;
     width: 300px;
@@ -228,6 +239,7 @@ p {
     transition: transform 1600ms ease-in-out 1000ms, opacity 900ms ease-out 1400ms;
     transform: translateY(0);
 }
+
 .main-burger.active {
     opacity: 1;
     transform: translateY(70px);
@@ -252,19 +264,18 @@ p {
 
 .recipe-section {
     height: 100vh;
+    min-height: 650px;
     width: 100vw;
     text-align: center;
 }
 
 .recipe-section h2 {
-    font-weight: 600;
     padding: 1rem 0;
 }
 
 .recipe-container {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    overflow: hidden;
     margin-right: 1rem;
 }
 
@@ -272,6 +283,7 @@ p {
     display: grid;
     grid-template-rows: 1fr;
     gap: 1.5rem;
+    max-width: 350px;
 }
 
 .l-component, .r-component {
@@ -331,8 +343,8 @@ transform: translateX(-50px);
 }
 
 .animated-burger {
+    max-width: 300px;
     position: relative;
-    overflow: hidden;    
     opacity: 0;
     transition: transform 1600ms ease-in-out 2500ms, opacity 2200ms ease-out 2400ms;
     transform: translateX(-100px);
@@ -427,8 +439,12 @@ transform: translateX(-50px);
     min-height: 100vh;
 }
 
-.mobile, .desktop {
+.desktop {
     display: none;
+}
+.mobile {
+    display: flex;
+    justify-content: center;
 }
 .menu-header {
     display: flex;
@@ -492,7 +508,7 @@ transform: translateX(-50px);
     height: 70vh;
     min-height: 540px;
     background-color: var(--color-cart);
-    margin: 2.5rem 1.5rem 5rem;
+    margin: 2rem 1.5rem 5rem;
     border-radius: 3rem;
     border: .4rem solid var(--color-border);
     text-align: center;
@@ -514,22 +530,22 @@ transform: translateX(-50px);
 
 .delivery-burger-icon {
     position: absolute;
-    top: 15rem;
-    left: 3.5rem;
+    top: 16rem;
+    left: 3rem;
     rotate: 25deg;
 }
 
 .delivery-drink-icon {
     position: absolute;
     top: 5.5rem;
-    right: 3rem;
+    right: 2.5rem;
     rotate: -15deg;
 }
 
 .delivery-fries-icon {
     position: absolute;
-    top: 3.5rem;
-    left: 2rem;
+    top: 4rem;
+    left: 1.5rem;
     rotate: -15deg;
 }
 
@@ -541,7 +557,7 @@ transform: translateX(-50px);
     padding-bottom: 1rem ;
 }
 
-.contacts {
+.contacts, .write-call {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -561,8 +577,7 @@ transform: translateX(-50px);
 }
 
 .gif-courier-container {
-    width: 12%;
-    min-width: 60px;
+    width: 60px;
     position: absolute;
     bottom: 7%;
     left: -100px;
@@ -594,14 +609,399 @@ transform: translateX(-50px);
     font-size: .8rem;
 }
 
-@media (max-width: 768px) {
+
+@media (min-width: 576px) {
+    .recipe-container {
+        grid-template-columns: 1fr 1fr;
+        margin-right: 1rem;
+    }
+    
+    #menu-content {
+        gap: 4rem 2.5rem;
+    }
+
+    .menu-card {
+        min-width: 180px;
+    }
+
+    .delivery-container {
+        margin: 3rem 2rem 4rem;
+    }
+}
+
+
+@media (min-width: 769px) {
+
+    :root {
+        --h1-font-size: 1.8rem;
+        --h2-font-size: 1.6rem;
+        --h3-font-size: 1.4rem;
+        --p-font-size: 1.2rem;
+    }
+    
+/* Header */
+
+    #nav-btn {
+        display: none;
+    }
+
+    .nav-menu {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
+        min-height: auto;
+        width: 60%;
+        top: 0;
+        background-color: transparent;
+        box-shadow: none;
+        font-size: var(--h3-font-size);
+    }
+
+    .nav-menu li:hover {
+        border-bottom: 3px solid var(--color-cart);
+    }
+
+    #nav-xbtn {
+        display: none;
+    }
+
+/* Home section */
+
+    .home-page-section{
+        height: 90vh;
+    }
+
+
+    .home-page-content {
+        flex-direction: row;
+        min-height: auto;
+        padding-top: 8vh;
+        align-items: normal;
+        justify-content: space-around;
+    }
+
+    .home-description {
+        width: 60%;
+        height: 60%;
+        max-height: 230px;
+    }
+
+    .main-burger-container {
+        height: 450px;
+    }
+
+/* Food menu section */
+
     .mobile {
-        display: flex;
-        justify-content: center;
+        display: none;
     }
-    }
-    @media (min-width: 769px) {
+
     .desktop {
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        justify-content: space-between;
+        margin: 1rem auto;
+        padding: 15px 5px;
+        box-sizing: border-box;
+    }
+    
+    button[data-category] {
+        font-family: 'Satisfy', cursive;
+        font-size: var(--h3-font-size);
+        background-color: transparent;
+        border: none;
+        padding-bottom: 3px;
+    }
+
+    button[data-category]:hover {
+        border-bottom: 3px solid var(--color-cart);
+        scale: 1.05;
+        padding-bottom: 0;
+    }
+
+    .delivery-container {
+        min-height: 400px;
+        margin: 1rem 2rem 2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .contacts, .write-call {
+        gap: 1.5rem;
+    }
+    .write-call {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .write-us, .call-us {
+        width: 300px;
+    }
+
+    .gif-courier-container {
+        bottom: 3%;
+        width: 50px;
+    }
+}
+@media (min-width: 1025px) {
+    body {
+        padding-top: 70px;
+    }
+
+    
+/* Header */
+
+    .header {
+        height: 70px;
+    }
+
+    .nav-menu {
+        margin-right: 20px;
+    }
+
+/* Home section */
+
+    .home-description {
+        width: 40%;
+        max-height: none;
+    }
+
+    .main-burger-container {
+        height: 610px;
+        width: 520px;
+    }
+
+    .main-burger, .main-board {
+        width: 450px;
+    }
+
+    .home-veg {
+        position: absolute;
         display: block;
+        width: 90px;
+        z-index: 50;
+        opacity: 0;
+        transform: translateY(-70px);
+        transition: all 1400ms ease-out 2400ms;
+    }
+
+    .home-veg.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .main-tomato-1 {
+        top: 1px;
+        right: 115px;
+    }
+
+    .main-tomato-2 {
+        bottom: 220px;
+        left: -20px;
+    }
+
+    .main-lettuce-1 {
+        top: 170px;
+        right:15px;
+        transform: translateY(-70px) rotate(25deg);
+    }
+
+    .main-lettuce-2 {
+        top: 50px;
+        left: 20px;
+        transform: translateY(-70px) rotate(15deg);
+    }
+
+    .main-cheez {
+        bottom: 160px;
+        right: 73px;
+        transform: translateY(-70px) rotate(25deg);
+    }
+
+/* Recipe */
+
+    .recipe-section {
+        min-height: 700px;
+    }
+
+    .recipe-section h2 {
+    padding: 2rem 0;
+    }
+
+    .animated-burger {
+        margin-left: 5vw;
+        transform: none;
+        transition: opacity 2000ms ease-out 1800ms;
+    }
+    
+    .animeted-burger img {
+        position: absolute;
+    }
+    
+    .button-bun {
+        left: 30px;
+        top: 350px;
+        width: 350px;
+        z-index: 10;
+        transition: transform 1300ms ease-in-out 2200ms;
+        transform: translateY(0);
+    }
+    .button-bun.active {
+        transform: translateY(20px);
+    }
+    
+    .tomato {
+        left: 110px;
+        top: 355px;
+        width: 220px;
+        z-index: 12;
+        transition: transform 1300ms ease-in-out 2200ms;
+        transform: translateY(0) rotate(0);
+    }
+    .tomato.active {
+        transform: translateY(-40px)rotate(-5deg);
+    }
+    
+    .onion2 {
+        left: 120px;
+        top: 355px;
+        width: 100px;
+        z-index: 14;
+        transform: rotate(10deg) translateY(0);
+        transition: transform 1400ms ease-in-out 2100ms;
+    }
+    .onion2.active {
+        transform: translate(-30px, -90px) rotate(-5deg);
+    }
+    
+    .onion1 {
+        z-index: 14;
+        left: 190px;
+        top: 360px;
+        width: 130px;
+        transform: translate(0) rotate(-10deg);
+        transition: transform 1400ms ease-in-out 2100ms;
+    }
+    .onion1.active {
+        transform: translate(30px, -100px) rotate(10deg);
+    }
+    
+    .cutlet {
+        z-index: 15;
+        left: 120px;
+        top: 340px;
+        width: 210px;
+        transition: transform 1500ms ease-in-out 2000ms;
+        transform: translateY(0) rotate(0);
+    }
+    .cutlet.active {
+        transform: translateY(-160px) rotate(5deg);
+    }
+    
+    .cheez {
+        z-index: 16;
+        left: 70px;
+        top: 335px;
+        width: 320px;
+        transition: transform 1600ms ease-in-out 1900ms;
+        transform: translate(0) rotate(0);
+    }
+    .cheez.active {
+        transform: translate(-10px, -190px) rotate(-3deg);
+    }
+    
+    .pikuli3 {
+        z-index: 17;
+        left: 130px;
+        top: 340px;
+        width: 90px;
+        rotate: none;
+        transition: transform 1700ms ease-in-out 1800ms;
+        transform: translate(0) rotate(0);
+    }
+    .pikuli3.active {
+        transform: translate(-25px, -270px) rotate(25deg);
+    }
+    
+    .pikuli2 {
+        z-index: 18;
+        left: 240px;
+        top: 337px;
+        width: 85px;
+        rotate: none;
+        transition: transform 1700ms ease-in-out 1800ms;
+        transform: translate(0) rotate(0);
+    }
+    .pikuli2.active {
+        transform: translate(20px, -250px) rotate(-12deg);
+    }
+    
+    .pikuli1 {
+        z-index: 19;
+        left: 190px;
+        top: 344px;
+        rotate: none;
+        width: 80px;
+        transition: transform 1700ms ease-in-out 1800ms;
+        transform: translate(0) rotate(0);
+    }
+    .pikuli1.active {
+        transform: translate(-5px, -230px) rotate(10deg);
+    }
+    
+    .top-bun, .top-bun2 {
+        z-index: 10;
+        left: 85px;
+        top: 275px;
+        width: 270px;
+        transition: transform 1800ms ease-in-out 1700ms;
+        transform: translateY(0);
+    }
+    .top-bun.active, .top-bun2.active  {
+        opacity: 1;
+        transform: translateY(-310px);
+    }
+    
+    .top-bun2 {
+        z-index: 20;
+    }
+
+    .recipe-container {
+        margin: 0 3rem;
+    }
+
+    .recipe {
+        max-width: 540px;
+        gap: .5rem;
+    }
+
+/* Food menu section */
+
+    #menu-content {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 5rem 4rem;
+    }
+
+    .menu-card {
+        min-height: 260px;
+    }
+
+    .menu-card img {
+        width: 240px;
+        top: -4rem;
+    }
+    
+    .menu-card h3 {
+        margin: 2.5rem 0 .5rem;
+    }
+
+    .delivery-container {
+        min-height: 460px;
+        margin: 1rem 8rem 2rem;
+    }
+
+    .gif-courier {
+        width: 140px;
     }
 }
